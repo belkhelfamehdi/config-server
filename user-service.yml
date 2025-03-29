@@ -4,22 +4,24 @@ server:
 spring:
   application:
     name: user-service
+    security:
+      jwt:
+        secret-key: 744bea40aeb7d7e98966836fec34272dded0e623f24bd63ce013112a3855175c
+        expiration-time: 15000
+
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-      
+    url: jdbc:postgresql://localhost:5432/job_plateform
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: Mehdimidou123!
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  spring.datasource.hikari.minimum-idle: 2
-  spring.datasource.hikari.maximum-pool-size: 10
-  spring.datasource.hikari.idle-timeout: 30000
-  spring.datasource.hikari.pool-name: HikariCP
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
 
 
 eureka:
