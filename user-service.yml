@@ -15,6 +15,7 @@ spring:
     username: postgres
     password: Mehdimidou123!
   jpa:
+    open-in-view: false
     show-sql: true
     hibernate:
       ddl-auto: create-drop
