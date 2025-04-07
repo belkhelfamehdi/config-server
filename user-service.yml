@@ -8,6 +8,13 @@ spring:
       jwt:
         secret-key: 744bea40aeb7d7e98966836fec34272dded0e623f24bd63ce013112a3855175c
         expiration-time: 3600000
+      oauth2:
+        client:
+          registration:
+            google:
+              client-id: 269762616177-dmkhcat473dhs15bn5ibu9udvpgiiovt.apps.googleusercontent.com
+              client-secret: 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
+              scope: email, profile
 
   datasource:
     url: jdbc:postgresql://localhost:5432/job_plateform
